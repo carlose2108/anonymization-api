@@ -1,6 +1,7 @@
 FROM python:3.7
 WORKDIR /api
 
+RUN pip install --upgrade pip
 RUN pip install fastapi uvicorn spacy
 
 COPY . /api/api
