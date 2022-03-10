@@ -23,13 +23,9 @@ jobs:
       - name: executing ssh commands using ssh key
         uses: appleboy/ssh-action@master
         with:
-          host: ${{secrets.HOST}}
-          username: ${{secrets.USERNAME}}
-          key: ${{secrets.KEY}}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
           script: |
-            sudo su
-            rm -rf anonymization-api
-            git clone git@github.com:carlose2108/anonymization-api.git
-            cd anonymization-api
-            sudo docker-compose down
-            sudo docker-compose -f docker-compose.yaml up --build -d
+	    whoami
+            ls -al
